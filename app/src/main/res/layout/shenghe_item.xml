@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shenghe_item"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+    <ImageView
+        android:id="@+id/shenghe_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/touxiang1"
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/shenghe_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/shenghe_image"
+        android:text="张三"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/shenghe_content"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/shenghe_image"
+        android:layout_below="@+id/shenghe_name"
+        android:text="英语四六级"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="20sp"/>
+    <ImageView
+        android:id="@+id/shenghe_image1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:gravity="right"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shengheed"
+        />
+</RelativeLayout>

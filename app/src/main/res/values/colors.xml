@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="main_rb_font">#B4B6C4</color>
+    <color name="background_biaoti">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGray">#B9B9B9</color>
+    <color name="colorBlue">#00BCD4</color>
+    <color name="content_color">#838888</color>
+</resources>

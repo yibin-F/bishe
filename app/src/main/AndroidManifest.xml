@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jxqapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".shenghe.ShengheContentActivity"></activity>
+        <activity android:name=".shenghe.ShengheedActivity" />
+        <activity android:name=".shenghe.ShengheingActivity" />
+        <activity android:name=".myfragment.ShengheActivity" />
+        <activity android:name=".info_fragment.UserInfoFragment" />
+        <activity android:name=".info_fragment.UserZsFragment" />
+        <activity android:name=".info_fragment.UserCjFragment" />
+        <activity android:name=".UserInfoActivity" />
+        <activity android:name=".Find3Activity" />
+        <activity android:name=".Find2Activity" />
+        <activity android:name=".Find1Activity" />
+        <activity android:name=".DynamicActivity" />
+        <activity android:name=".DynamicItemActivity" />
+        <activity android:name=".EditInfoActivity" />
+        <activity android:name=".MsgActivity" />
+        <activity android:name=".fragment.MyFragment" />
+        <activity android:name=".fragment.FindFragment" />
+        <activity android:name=".fragment.DynamicFragment" />
+        <activity android:name=".fragment.ChatFragment" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+    </application>
+
+</manifest>

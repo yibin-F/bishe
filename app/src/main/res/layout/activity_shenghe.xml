@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myfragment.ShengheActivity">
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/shenghe_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/shenghe_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/shengheing"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="未审核" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/shengheed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="已审核" />
+        </com.google.android.material.tabs.TabLayout>
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>
