@@ -29,13 +29,13 @@
         <activity android:name=".fragment.DynamicFragment" />
         <activity android:name=".fragment.ChatFragment" />
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
