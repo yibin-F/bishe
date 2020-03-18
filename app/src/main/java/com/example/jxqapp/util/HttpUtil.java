@@ -25,22 +25,28 @@ public class HttpUtil {
     }*/
 
     // 发送POST请求
-    public static void sendPostRequest(String url, Map<String, Object> map, okhttp3.Callback callback){
-        OkHttpClient client = new OkHttpClient(); // 创建一个client
-        // POST请求的参数需要放在一个RequestBody对象中，它由FormBody.Builder建造者类来建造（建造者模式）
-        FormBody.Builder builder = new FormBody.Builder();
-        if(map != null){
-            // 不能直接把map转为RequestBody，必须遍历map的key，并逐一地往builder中添加对应的value
-            Set<String> keys = map.keySet();
-            for(String key : keys){ // 注意：RequestBody的参数只能是字符串类型的
-                String value = map.get(key).toString();
-                builder.add(key, value);
+    public static void sendPostRequest(final String url, final Map<String, Object> map, final okhttp3.Callback callback){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient client = new OkHttpClient(); // 创建一个client
+                // POST请求的参数需要放在一个RequestBody对象中，它由FormBody.Builder建造者类来建造（建造者模式）
+                FormBody.Builder builder = new FormBody.Builder();
+                if(map != null){
+                    // 不能直接把map转为RequestBody，必须遍历map的key，并逐一地往builder中添加对应的value
+                    Set<String> keys = map.keySet();
+                    for(String key : keys){ // 注意：RequestBody的参数只能是字符串类型的
+                        String value = map.get(key).toString();
+                        builder.add(key, value);
+                    }
+                }
+                RequestBody requestBody = builder.build(); // 最后利用builder来生成一个RequestBody实例
+                // 组装一个Request对象（这次有额外传入RequestBody）
+                Request request = new Request.Builder().url(url).post(requestBody).build();
+                client.newCall(request).enqueue(callback); // 发送请求
             }
-        }
-        RequestBody requestBody = builder.build(); // 最后利用builder来生成一个RequestBody实例
-        // 组装一个Request对象（这次有额外传入RequestBody）
-        Request request = new Request.Builder().url(url).post(requestBody).build();
-        client.newCall(request).enqueue(callback); // 发送请求
+        }).start();
+
     }
     // 处理文件上传 -- 每次发送一个文件
     public static void sendUploadFileRequest(String url, File file, Map<String, Object> map, okhttp3.Callback callback){

@@ -12,13 +12,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.jxqapp.AlterInfo.Alter_PasswordActivity;
 import com.example.jxqapp.EditInfoActivity;
 import com.example.jxqapp.R;
 import com.example.jxqapp.myfragment.ShengheActivity;
+import com.example.jxqapp.util.StaticUtil;
 
 public class MyFragment extends Fragment implements View.OnClickListener {
     private TextView editInfo;
-    private LinearLayout shenhe;
+    private LinearLayout shenhe,xiugai_ll;
     private static MyFragment mf;
 
     //单例模式
@@ -29,16 +31,19 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         return mf;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+//    @Override
+//    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         editInfo = (TextView) this.getActivity().findViewById(R.id.my_bianji);
         editInfo.setOnClickListener(this);
+
+        xiugai_ll = this.getActivity().findViewById(R.id.my_xiugai);
+        xiugai_ll.setOnClickListener(this);
 
         shenhe = this.getActivity().findViewById(R.id.my_shenhe);
         shenhe.setOnClickListener(this);
@@ -47,6 +52,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_my_fragment, container, false);
+        TextView textView = view.findViewById(R.id.my_name);
+        textView.setText(StaticUtil.username);
+
         return view;
     }
 
@@ -61,6 +69,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
                 Intent intent1 = new Intent(this.getActivity(), ShengheActivity.class);
                 startActivity(intent1);
                 break;
+            case R.id.my_xiugai:
+                Intent intent2 = new Intent(this.getActivity(), Alter_PasswordActivity.class);
+                startActivity(intent2);
         }
     }
 }

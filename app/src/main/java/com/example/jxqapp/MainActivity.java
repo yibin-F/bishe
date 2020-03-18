@@ -7,12 +7,16 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.jxqapp.fragment.*;
+import com.example.jxqapp.util.StaticUtil;
 import com.qmuiteam.qmui.widget.popup.QMUIQuickAction;
+
+import static com.example.jxqapp.util.StaticUtil.student;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener   {
     /**
@@ -34,8 +38,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();
         initEvent();
+//        if(StaticUtil.userType==1){
+//            Toast.makeText(MainActivity.this, student.toString(),Toast.LENGTH_SHORT).show();
+//        }
     }
 
     private void initEvent() {
@@ -55,6 +63,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         dynamicFragment = DynamicFragment.getDynamicFragment();
         findFragment = FindFragment.getFindFragment();
         myFragment = MyFragment.getMyFragment();
+
         //显示
         mTransaction = getSupportFragmentManager().beginTransaction();
         mTransaction.replace(R.id.fragment,chatFragemnt);

@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+<!--    <color name="colorPrimary">#008577</color>-->
+<!--    <color name="colorPrimaryDark">#00574B</color>-->
+<!--    <color name="colorAccent">#D81B60</color>-->
     <color name="main_rb_font">#B4B6C4</color>
     <color name="background_biaoti">#ffffff</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorGray">#B9B9B9</color>
     <color name="colorBlue">#00BCD4</color>
     <color name="content_color">#838888</color>
+    <color name="colorMedianGray_class">#888888</color>
+    <color name="colorPrimary">#4f4f4f</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#00A2E9</color>
+    <color name="math">#5CADF3</color>
+    <color name="chinese">#CF9C54</color>
+    <color name="english">#F76060</color>
+    <color name="biology">#B7F86C</color>
+    <color name="chemistry">#976DF0</color>
+    <color name="geography">#0BCFE9</color>
+    <color name="history">#723630</color>
+    <color name="physics">#6274DD</color>
+    <color name="politics">#D62222</color>
+    <color name="colorLightGrey_class">#DDDDDD</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorLightWhite">#E6E6E6</color>
 </resources>

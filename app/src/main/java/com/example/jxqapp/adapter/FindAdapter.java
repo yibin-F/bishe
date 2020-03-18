@@ -12,20 +12,21 @@ import com.example.jxqapp.ChatAdapter;
 import com.example.jxqapp.R;
 import com.example.jxqapp.bean.ChatItem;
 import com.example.jxqapp.bean.FindItem;
+import com.example.jxqapp.bean.Student;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class FindAdapter extends ArrayAdapter<FindItem> {
+public class FindAdapter extends ArrayAdapter<Student> {
     private int resourceId;
-    public FindAdapter(@NonNull Context context, int textViewResourceId, @NonNull List<FindItem> objects) {
+    public FindAdapter(@NonNull Context context, int textViewResourceId, @NonNull List<Student> objects) {
         super(context,textViewResourceId,objects);
         resourceId = textViewResourceId;
     }
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        FindItem findItem = getItem(position);//获取当前项的item实例
+        Student student = getItem(position);//获取当前项的item实例
         View view;
         FindAdapter.ViewHolder viewHolder;
         if (convertView == null){
@@ -40,7 +41,7 @@ public class FindAdapter extends ArrayAdapter<FindItem> {
 
 
         //  chatImage.setImageResource(chatItem.getImgstr());
-        viewHolder.findName.setText(findItem.getName());
+        viewHolder.findName.setText(student.getUser_name());
 
         return view;
     }

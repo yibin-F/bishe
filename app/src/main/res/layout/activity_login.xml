@@ -64,45 +64,66 @@
             android:padding="10dp"
             android:background="@drawable/login_border_botton"
             />
-<!--        <RadioGroup-->
-<!--            android:id="@+id/login_radioGroup"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:padding="5dp"-->
-<!--            android:layout_marginTop="10dp">-->
+        <RadioGroup
+            android:id="@+id/login_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginTop="10dp">
 
-<!--            <RadioButton-->
-<!--                android:id="@+id/radioButton_student"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="学生"-->
-<!--                android:textSize="15sp"-->
-<!--                android:textColor="@color/colorWhite"-->
-<!--                android:checked="true"-->
-<!--                android:button="@drawable/radio_button_style"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                />-->
-<!--            <RadioButton-->
-<!--                android:id="@+id/radioButton_teacher"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="教师"-->
-<!--                android:textSize="15sp"-->
-<!--                android:textColor="@color/colorWhite"-->
-<!--                android:button="@drawable/radio_button_style"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                />-->
+            <RadioButton
+                android:id="@+id/radioButton_student"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学生"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:checked="true"
+                android:button="@drawable/radio_button_style"
+                android:layout_marginLeft="10dp"
+                />
+            <RadioButton
+                android:id="@+id/radioButton_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="教师"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:button="@drawable/radio_button_style"
+                android:layout_marginLeft="30dp"
+                />
+            <RadioButton
+                android:id="@+id/radioButton_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="家长"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:button="@drawable/radio_button_style"
+                android:layout_marginLeft="30dp"
+                />
+            <RadioButton
+                android:id="@+id/radioButton_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="企业"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:button="@drawable/radio_button_style"
+                android:layout_marginLeft="30dp"
+                />
 
 
-<!--        </RadioGroup>-->
-        <!-- 加载动画 -->
-<!--        <com.mingle.widget.LoadingView-->
-<!--            android:id="@+id/loadView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:visibility="invisible"-->
-<!--            />-->
+
+        </RadioGroup>
+         加载动画
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loadView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            />
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"

@@ -4,4 +4,6 @@
     <string name="rb_dynamic">动态</string>
     <string name="rb_find">招聘</string>
     <string name="rb_my">我的</string>
+<!--    <string name="ip_url">192.168.43.181</string>-->
+    <string name="ip_url">192.168.0.6</string>
 </resources>

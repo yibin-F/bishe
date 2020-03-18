@@ -58,6 +58,41 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/edit_id"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/background_biaoti"
+        android:layout_marginBottom="1dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ID"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/editinfo_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1607052205"
+                android:textSize="15dp"
+                android:gravity="center"
+                />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/xiangyou"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -76,6 +111,7 @@
             android:orientation="horizontal"
             android:gravity="right">
             <TextView
+                android:id="@+id/editinfo_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="小明"
@@ -94,7 +130,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/edit_id"
+        android:id="@+id/edit_sex"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
@@ -104,7 +140,7 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="学号"
+            android:text="性别"
             android:textSize="20sp"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -112,9 +148,10 @@
             android:orientation="horizontal"
             android:gravity="right">
             <TextView
+                android:id="@+id/editinfo_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="1607052205"
+                android:text="男"
                 android:textSize="15dp"
                 android:gravity="center"
                 />
@@ -146,6 +183,42 @@
             android:orientation="horizontal"
             android:gravity="right">
             <TextView
+                android:id="@+id/editinfo_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="13695014452"
+                android:textSize="15dp"
+                android:gravity="center"
+                />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/xiangyou"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/edit_introduct"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/background_biaoti"
+        android:layout_marginBottom="1dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="个人简介"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/editinfo_introduct"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="13695014452"
@@ -180,6 +253,7 @@
             android:orientation="horizontal"
             android:gravity="right">
             <TextView
+                android:id="@+id/editinfo_email"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="447231887@qq.com"
@@ -195,4 +269,76 @@
                 android:background="@drawable/xiangyou"/>
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/edit_class"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/background_biaoti"
+        android:layout_marginBottom="1dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="班级"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/editinfo_class"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="16软件工程1班"
+                android:textSize="15dp"
+                android:gravity="center"
+                />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/xiangyou"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_adress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/background_biaoti"
+        android:layout_marginBottom="1dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="地址"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/editinfo_adress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="福建省云霄县"
+                android:textSize="15dp"
+                android:gravity="center"
+                />
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/xiangyou"/>
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
