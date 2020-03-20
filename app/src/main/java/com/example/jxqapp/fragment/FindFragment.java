@@ -17,6 +17,7 @@ import com.example.jxqapp.Find2Activity;
 import com.example.jxqapp.Find3Activity;
 import com.example.jxqapp.R;
 import com.example.jxqapp.adapter.FindPagerAdapter;
+import com.example.jxqapp.util.StaticUtil;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -50,9 +51,24 @@ public class FindFragment extends Fragment{
         //  让 PagerAdapter 梳理一下这些 view界面 的数据源，将 viewArrayList 集合传入
         pagerAdapter = new FindPagerAdapter(getChildFragmentManager(),1);
         //  最后给 viewPager 设置数据源
-        pagerAdapter.AddFragemnt(new Find1Activity(),"班级");
-        pagerAdapter.AddFragemnt(new Find2Activity(),"企业");
-        pagerAdapter.AddFragemnt(new Find3Activity(),"查找");
+        if (StaticUtil.userType==1){
+            pagerAdapter.AddFragemnt(new Find1Activity(),"班级");
+            pagerAdapter.AddFragemnt(new Find2Activity(),"企业");
+            pagerAdapter.AddFragemnt(new Find3Activity(),"查找");
+        }else if (StaticUtil.userType==2){
+            pagerAdapter.AddFragemnt(new Find1Activity(),"班级");
+            pagerAdapter.AddFragemnt(new Find2Activity(),"企业");
+            pagerAdapter.AddFragemnt(new Find3Activity(),"查找");
+        }else if (StaticUtil.userType==3){
+            pagerAdapter.AddFragemnt(new Find1Activity(),"孩子");
+            pagerAdapter.AddFragemnt(new Find2Activity(),"老师");
+            pagerAdapter.AddFragemnt(new Find3Activity(),"查找");
+        }else if (StaticUtil.userType==4){
+            pagerAdapter.AddFragemnt(new Find1Activity(),"班级");
+            pagerAdapter.AddFragemnt(new Find2Activity(),"企业");
+            pagerAdapter.AddFragemnt(new Find3Activity(),"查找");
+        }
+
         findPager.setAdapter(pagerAdapter);
     }
     @Override

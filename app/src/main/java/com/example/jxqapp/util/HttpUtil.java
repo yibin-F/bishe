@@ -26,9 +26,6 @@ public class HttpUtil {
 
     // 发送POST请求
     public static void sendPostRequest(final String url, final Map<String, Object> map, final okhttp3.Callback callback){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
                 OkHttpClient client = new OkHttpClient(); // 创建一个client
                 // POST请求的参数需要放在一个RequestBody对象中，它由FormBody.Builder建造者类来建造（建造者模式）
                 FormBody.Builder builder = new FormBody.Builder();
@@ -44,8 +41,7 @@ public class HttpUtil {
                 // 组装一个Request对象（这次有额外传入RequestBody）
                 Request request = new Request.Builder().url(url).post(requestBody).build();
                 client.newCall(request).enqueue(callback); // 发送请求
-            }
-        }).start();
+
 
     }
     // 处理文件上传 -- 每次发送一个文件

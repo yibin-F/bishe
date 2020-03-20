@@ -25,7 +25,8 @@
             android:layout_height="150dp"
             android:background="@color/background_biaoti"
             android:orientation="horizontal">
-            <ImageView
+            <com.qmuiteam.qmui.widget.QMUIRadiusImageView2
+                android:id="@+id/user_image"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="10dp"

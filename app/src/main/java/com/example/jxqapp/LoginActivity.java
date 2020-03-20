@@ -22,6 +22,7 @@ import com.example.jxqapp.bean.Teacher;
 import com.example.jxqapp.util.HttpUtil;
 import com.example.jxqapp.util.StaticUtil;
 import com.google.gson.Gson;
+import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.io.IOException;
@@ -94,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     /* 绑定组件 */
     private void setFindViewId() {
+
         intput_username = findViewById(R.id.input_username);
         intput_password = findViewById(R.id.input_password);
         btn_submit = findViewById(R.id.btn_submit);
@@ -120,6 +122,14 @@ public class LoginActivity extends AppCompatActivity {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //对话框
+                final QMUITipDialog tipDialog;
+                tipDialog = new QMUITipDialog.Builder(LoginActivity.this)
+                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+                        .setTipWord("正在登录")
+                        .create();
+                tipDialog.show();
+
                 username = intput_username.getText().toString();
                 password = intput_password.getText().toString();
                 Map<String, Object> map1 = new HashMap<>();
@@ -152,6 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                                             String s = response.body().string();
                                             Student student = new Gson().fromJson(s,Student.class);
                                             if(student!=null){
+                                                tipDialog.dismiss();
                                                 Toast.makeText(LoginActivity.this,"欢迎，"+student.getUser_name(),Toast.LENGTH_SHORT).show();
                                                 StaticUtil.userType = userKind;
                                                 StaticUtil.student = student;

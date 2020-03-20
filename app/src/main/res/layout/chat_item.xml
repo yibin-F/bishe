@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:paddingLeft="20dp"
     android:layout_marginBottom="10dp"
     android:layout_marginTop="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.qmuiteam.qmui.widget.QMUIRadiusImageView
         android:id="@+id/chat_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="#00BCD4"
-        app:qmui_corner_radius="20dp"
-        app:qmui_border_color="#111111"/>
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/none_img" />
 
     <TextView
         android:id="@+id/chat_name"
@@ -20,7 +21,7 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/chat_image"
         android:text="xia2525nh"
-        android:textSize="40sp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/chat_content"
@@ -28,12 +29,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorGray"
         android:layout_toRightOf="@+id/chat_image"
         android:layout_below="@+id/chat_name"
         android:text="有人在ma "
         android:singleLine="true"
         android:ellipsize="end"
-        android:textSize="20sp"/>
+        android:textSize="10sp"/>
     <TextView
         android:id="@+id/chat_time"
         android:layout_width="20dp"

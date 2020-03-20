@@ -17,11 +17,13 @@ import com.example.jxqapp.EditInfoActivity;
 import com.example.jxqapp.R;
 import com.example.jxqapp.myfragment.ShengheActivity;
 import com.example.jxqapp.util.StaticUtil;
+import com.qmuiteam.qmui.widget.QMUIRadiusImageView2;
 
 public class MyFragment extends Fragment implements View.OnClickListener {
     private TextView editInfo;
     private LinearLayout shenhe,xiugai_ll;
     private static MyFragment mf;
+    private QMUIRadiusImageView2 user_img;
 
     //单例模式
     public static MyFragment getMyFragment() {
@@ -39,6 +41,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        user_img = this.getActivity().findViewById(R.id.user_image);
+        user_img.setCircle(true);
+
         editInfo = (TextView) this.getActivity().findViewById(R.id.my_bianji);
         editInfo.setOnClickListener(this);
 

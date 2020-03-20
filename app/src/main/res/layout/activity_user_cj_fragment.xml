@@ -6,5 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".info_fragment.UserCjFragment"
     android:background="@color/colorWhite">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/qmui_config_color_background">
+        <com.example.jxqapp.util.MyListView
+            android:id="@+id/cj_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
 
 </LinearLayout>

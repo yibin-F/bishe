@@ -13,6 +13,7 @@ import com.example.jxqapp.R;
 import com.example.jxqapp.bean.ChatItem;
 import com.example.jxqapp.bean.FindItem;
 import com.example.jxqapp.bean.Student;
+import com.qmuiteam.qmui.widget.QMUIRadiusImageView2;
 
 import java.util.List;
 
@@ -33,6 +34,8 @@ public class FindAdapter extends ArrayAdapter<Student> {
             view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
             viewHolder = new FindAdapter.ViewHolder();
             viewHolder.findName = (TextView) view.findViewById(R.id.find_name);
+            viewHolder.find1_img = view.findViewById(R.id.find1_item_img);
+            viewHolder.find1_img.setCircle(true);
             view.setTag(viewHolder);
         }else {
             view = convertView;
@@ -47,5 +50,7 @@ public class FindAdapter extends ArrayAdapter<Student> {
     }
     class ViewHolder {
         TextView findName;
+        QMUIRadiusImageView2 find1_img;
+
     }
 }

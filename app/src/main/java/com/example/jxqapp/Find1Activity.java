@@ -31,8 +31,10 @@ import com.example.jxqapp.fragment.FindFragment;
 import com.example.jxqapp.util.HttpUtil;
 import com.example.jxqapp.util.StaticUtil;
 import com.google.gson.Gson;
+import com.qmuiteam.qmui.widget.QMUIRadiusImageView2;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -68,6 +70,7 @@ public class Find1Activity extends Fragment implements AdapterView.OnItemClickLi
 //        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 //                .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
 //                .penaltyLog().penaltyDeath().build());
+
         initFind();
 //        new Thread(new Runnable() {
 //            @Override
@@ -152,8 +155,8 @@ public class Find1Activity extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Student student = studentList.get(position);
-        Toast.makeText(this.getActivity(),"545dfs",Toast.LENGTH_SHORT);
+      //  Student student = studentList.get(position);
+        StaticUtil.student_info = studentList.get(position);
         Intent intent = new Intent(this.getActivity(), UserInfoActivity.class);
         startActivity(intent);
     }

@@ -1,6 +1,8 @@
 package com.example.jxqapp.bean;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private int u_id;
     private String img_url;
     private String user_id;

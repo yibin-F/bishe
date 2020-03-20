@@ -2,18 +2,34 @@ package com.example.jxqapp;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jxqapp.bean.Student;
+import com.example.jxqapp.util.HttpUtil;
 import com.example.jxqapp.util.StaticUtil;
+import com.google.gson.Gson;
+import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
+import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction;
+import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EditInfoActivity extends AppCompatActivity {
     private LinearLayout edit_touxiang,edit_id,edit_name,edit_sex,edit_phone,edit_class,edit_adress,edit_email,edit_introduct;
     private TextView text_id,text_name,text_phone,text_class,text_adress,text_email,text_introduct,text_sex;
+    private int mCurrentDialogStyle = com.qmuiteam.qmui.R.style.QMUI_Dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +45,71 @@ public class EditInfoActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
+        edit_introduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showEditTextDialog();
+            }
+        });
     }
+
+    private void showEditTextDialog() {
+        final QMUIDialog.EditTextDialogBuilder builder = new QMUIDialog.EditTextDialogBuilder(EditInfoActivity.this);
+        builder.setPlaceholder("在此输入您的昵称")
+                .setInputType(InputType.TYPE_CLASS_TEXT)
+                .addAction("取消", new QMUIDialogAction.ActionListener() {
+                    @Override
+                    public void onClick(QMUIDialog dialog, int index) {
+                        dialog.dismiss();
+                    }
+                })
+                .addAction("确定", new QMUIDialogAction.ActionListener() {
+                    @Override
+                    public void onClick(final QMUIDialog dialog, int index) {
+                        final CharSequence text = builder.getEditText().getText();
+                        String ip_url = EditInfoActivity.this.getResources().getString(R.string.ip_url);
+                        final Map<String,Object> map1 = new HashMap<>();
+                        map1.put("text",text);
+                        map1.put("uid",StaticUtil.student.getU_id());
+                        HttpUtil.sendPostRequest("http://"+ip_url+":8989/alter_introduct", map1, new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                            }
+
+                            @Override
+                            public void onResponse(Call call, final Response response) throws IOException {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            StaticUtil.student.setIntroduct(text.toString());
+                                            dialog.dismiss();
+                                            final QMUITipDialog tipDialog;
+                                            tipDialog = new QMUITipDialog.Builder(EditInfoActivity.this)
+                                                    .setIconType(QMUITipDialog.Builder.ICON_TYPE_SUCCESS)
+                                                    .setTipWord("修改成功")
+                                                    .create();
+                                            tipDialog.show();
+                                            text_introduct.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    tipDialog.dismiss();
+                                                }
+                                            },1500);
+                                            setFindViewId();
+
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+                .create(mCurrentDialogStyle).show();
+    }
+
 
     private void setFindViewId() {
         //整行组件

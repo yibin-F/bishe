@@ -6,6 +6,7 @@
     <color name="main_rb_font">#B4B6C4</color>
     <color name="background_biaoti">#ffffff</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="background_color">#f4f5f7</color>
     <color name="colorGray">#B9B9B9</color>
     <color name="colorBlue">#00BCD4</color>
     <color name="content_color">#838888</color>
